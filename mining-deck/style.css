@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: black !important;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #FFFAF0;
+  }
+  
+  .row {
+    display: flex;
+    overflow: auto;
+  }
+  
+  .row-1 {
+    flex: 5;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .row-2 {
+    flex: 20;
+    display: flex;
+  }
+  
+  .row-2-col {
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .row-3 {
+    flex: 25;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .row-4 {
+    flex: 5;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .row-5 {
+    flex: 40;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .row-5 img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+  }
+  
+  .row-6 {
+    flex: 20;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  hr {
+    width: 90%;
+    border: none;
+    border-top: 1px solid black;
+    margin: 10px auto;
+  }
+  
+  .word {
+    font-size: 4rem;
+    text-align: center;
+  }
+  
+  .reading {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the audio button and text */
+    font-size: 2rem;
+  }
+  
+  .pitch {
+    font-size: 2rem;
+  }
+  
+  .sentence {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the audio button and text */
+    font-size: 1.5rem;
+  }
+  
+  .definition {
+    font-size: 1.2rem;
+  }
+  
+  .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .replay-button {
+    width: 65%;
+  }
+  
+  .audio {
+    display: inline-flex; /* Ensures the audio button is treated as part of the same line */
+    align-items: center;
+  }
+  
+  .text {
+    display: inline-flex; /* Keeps text aligned with the audio button */
+    align-items: center;
+  }
+  
+  span {
+      border-color: #ef5350 !important;
+  }
+  
+  a {
+      color: #ef5350 !important;
+  }

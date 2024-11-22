@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="row row-1">
+    <div>{{Frequency}}</div>
+  </div>
+  <div class="row row-2">
+    <div class="row-2-col">
+      <div class="word" id="word">{{Word}}</div>
+      <div class="reading">
+        <div class="audio">{{WordAudio}}</div>
+        <div class="text">{{Reading}}</div>
+      </div>
+    </div>
+    <div class="row-2-col pitch">{{Pitch}}</div>
+  </div>
+  <hr />
+  <div class="row row-3">
+    <div class="definition" id="definition">{{WordDefinition}}</div>
+  </div>
+  <div class="row row-4">
+    <div class="sentence">
+      <div class="audio">{{SentenceAudio}}</div>
+      <div class="text" id="sentence">{{Sentence}}</div>
+    </div>
+  </div>
+  <div class="row row-5">{{Image}}</div>
+</div>
+
+<script>
+  (() => {
+    // Underline word in the sentence
+    const wordElement = document.querySelector("#word");
+    const sentenceElement = document.querySelector("#sentence");
+
+    if (wordElement && sentenceElement) {
+      const word = wordElement.textContent.trim();
+      const sentence = sentenceElement.textContent.trim();
+
+      if (sentence.includes(word)) {
+        const highlightedSentence = sentence.replace(
+          new RegExp(`(${word})`, "g"),
+          `<span style="text-decoration: underline; text-decoration-color: #ef5350;">$1</span>`
+        );
+
+        sentenceElement.innerHTML = highlightedSentence;
+      }
+    }
+
+    // toggle dictionaries
+    const definitionElement = document.getElementById("definition");
+
+    const wordDefinition = "{{WordDefinition}}";
+    const wordDefinitionMono = "{{WordDefinitionMono}}";
+
+    let isMono = false;
+
+    definitionElement.addEventListener("click", () => {
+      isMono = !isMono;
+      definitionElement.innerHTML = isMono
+        ? wordDefinitionMono
+        : wordDefinition;
+    });
+  })();
+</script>
