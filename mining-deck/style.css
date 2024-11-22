@@ -53,15 +53,17 @@ body {
 }
 
 .row-5 {
-  flex: 40;
+  flex: 30;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px; /* Added margin to the bottom */
 }
 
 .row-5 img {
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 400px;
+  max-height: 300px;
   object-fit: contain;
+  margin-bottom: 20px; /* Added margin to the bottom */
 }
 
 .row-6 {
@@ -87,7 +89,7 @@ hr {
 .reading {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px; /* Reduced gap between audio button and text */
   font-size: 1.6rem;
 }
 
@@ -98,7 +100,7 @@ hr {
 .sentence {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between the audio button and text */
+  gap: 5px; /* Reduced gap */
   font-size: 1.5rem;
 }
 
@@ -117,7 +119,7 @@ hr {
 }
 
 .audio {
-  display: inline-flex; /* Ensures the audio button is treated as part of the same line */
+  display: inline-flex;
   align-items: center;
 }
 
@@ -151,15 +153,16 @@ div[data-sc-content="example-sentence"] {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   .word {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .reading {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .sentence {
     font-size: 1.2rem;
+    gap: 2px; /* Reduce gap further for mobile */
   }
 
   .definition {
@@ -171,8 +174,15 @@ div[data-sc-content="example-sentence"] {
     max-height: 90%;
   }
 
-  /* Adjust layout for smaller screens */
   .card {
     padding: 10px;
+  }
+
+  .replay-button {
+    width: 20px;
+  }
+
+  .pitch {
+    font-size: 1.3rem;
   }
 }

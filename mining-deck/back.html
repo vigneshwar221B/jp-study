@@ -25,9 +25,13 @@
     <div class="sentence">
       <div class="audio">{{SentenceAudio}}</div>
       <div class="text" id="sentence">{{Sentence}}</div>
+      <div class="text" id="sentenceReading" style="display: none">
+        {{SentenceReading}}
+      </div>
     </div>
   </div>
   <div class="row row-5">{{Image}}</div>
+  <div class="row row-6">{{Info}}</div>
 </div>
 
 <script>
@@ -35,6 +39,7 @@
     // Underline word in the sentence
     const wordElement = document.querySelector("#word");
     const sentenceElement = document.querySelector("#sentence");
+    const sentenceReadingElement = document.querySelector("#sentenceReading");
 
     if (wordElement && sentenceElement) {
       const word = wordElement.textContent.trim();
@@ -57,7 +62,7 @@
 
     let isMono = false;
     const toggleContent = () => {
-      if(monoDefinition.textContent.trim().length == 0) return;
+      if (monoDefinition.textContent.trim().length == 0) return;
 
       isMono = !isMono;
       normalDefinition.style.display = isMono ? "none" : "block";
@@ -69,5 +74,29 @@
       passive: true,
     });
 
+    // Toggle between sentence and sentenceReading on hover or touch
+    const toggleSentence = () => {
+      const sentence = document.getElementById("sentence");
+      const sentenceReading = document.getElementById("sentenceReading");
+
+      // If either sentence is visible, toggle them
+      if (sentence && sentenceReading) {
+        const isSentenceVisible = sentence.style.display !== "none";
+
+        // Toggle visibility
+        sentence.style.display = isSentenceVisible ? "none" : "block";
+        sentenceReading.style.display = isSentenceVisible ? "block" : "none";
+      }
+    };
+
+    // Event listeners for hover (desktop) and touch (mobile)
+    const sentenceContainer = document.querySelector(".sentence");
+    if (sentenceContainer) {
+      sentenceContainer.addEventListener("mouseenter", toggleSentence); // For hover
+      sentenceContainer.addEventListener("mouseleave", toggleSentence); // For hover out
+      sentenceContainer.addEventListener("touchstart", toggleSentence, {
+        passive: true,
+      }); // For touch
+    }
   })();
 </script>
