@@ -4,13 +4,12 @@ body {
   padding: 0;
   height: 100%;
   color: black !important;
+  background-color: #fffaf0 !important;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
   overflow: hidden;
   background-color: #fffaf0;
 }
@@ -42,7 +41,7 @@ body {
 }
 
 .row-3 {
-  flex: 35;
+  flex: 40;
   justify-content: center;
   align-items: center;
 }
@@ -60,8 +59,8 @@ body {
 }
 
 .row-5 img {
-  max-width: 70%;
-  max-height: 70%;
+  max-width: 60%;
+  max-height: 60%;
   object-fit: contain;
 }
 
@@ -81,7 +80,7 @@ hr {
 }
 
 .word {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -89,7 +88,7 @@ hr {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .pitch {
@@ -99,7 +98,7 @@ hr {
 .sentence {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; /* Space between the audio button and text */
   font-size: 1.5rem;
 }
 
@@ -118,12 +117,12 @@ hr {
 }
 
 .audio {
-  display: inline-flex;
+  display: inline-flex; /* Ensures the audio button is treated as part of the same line */
   align-items: center;
 }
 
 .text {
-  display: inline-flex;
+  display: inline-flex; /* Keeps text aligned with the audio button */
   align-items: center;
 }
 
@@ -146,5 +145,34 @@ a {
 }
 
 div[data-sc-content="example-sentence"] {
-  display: none;
+  display: none; /* Hides the element completely */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .word {
+    font-size: 3rem;
+  }
+
+  .reading {
+    font-size: 1.5rem;
+  }
+
+  .sentence {
+    font-size: 1.2rem;
+  }
+
+  .definition {
+    font-size: 1rem;
+  }
+
+  .row-5 img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  /* Adjust layout for smaller screens */
+  .card {
+    padding: 10px;
+  }
 }

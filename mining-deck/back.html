@@ -41,7 +41,6 @@
       const sentence = sentenceElement.textContent.trim();
 
       if (sentence.includes(word)) {
-        // Replace the word with a styled version
         const highlightedSentence = sentence.replace(
           new RegExp(`(${word})`, "g"),
           `<span style="text-decoration: underline; text-decoration-color: #ef5350;">$1</span>`
@@ -51,18 +50,24 @@
       }
     }
 
-    // toggle dictionaries
+    // Toggle dictionaries
     const definitionElement = document.getElementById("definition");
     const normalDefinition = document.getElementById("definition-normal");
     const monoDefinition = document.getElementById("definition-mono");
 
     let isMono = false;
+    const toggleContent = () => {
+      if(monoDefinition.textContent.trim().length == 0) return;
 
-    definitionElement.addEventListener("click", () => {
       isMono = !isMono;
-
       normalDefinition.style.display = isMono ? "none" : "block";
       monoDefinition.style.display = isMono ? "block" : "none";
+    };
+
+    definitionElement.addEventListener("click", toggleContent);
+    definitionElement.addEventListener("touchstart", toggleContent, {
+      passive: true,
     });
+
   })();
 </script>
