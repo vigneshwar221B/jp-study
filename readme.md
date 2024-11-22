@@ -6,8 +6,14 @@ Desktop                                                      |  Mobile
 
 ### Quick Install
 
+- Tap to switch dictionaries
+- Hover or tap to see sentence furigana
+- Word highlight in the sentence
+
+### Quick Install
+
 - [Download](https://raw.githubusercontent.com/vigneshwar221B/jp-study/main/mining-deck/mining.apkg)
 
-### Yomitan config
+### Sample Yomitan Config
 
 ![](./mining-deck/yomi.webp)
