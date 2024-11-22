@@ -4,7 +4,7 @@ Desktop                                                      |  Mobile
 :--------------------------------------------------------: |:---------------------------------------------------------:
 ![](./mining-deck/desktop.webp)  |  ![](./mining-deck/mobile.webp)
 
-### Quick Install
+### Features
 
 - Tap to switch dictionaries
 - Hover or tap to see sentence furigana
