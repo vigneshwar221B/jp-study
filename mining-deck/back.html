@@ -14,7 +14,12 @@
   </div>
   <hr />
   <div class="row row-3">
-    <div class="definition" id="definition">{{WordDefinition}}</div>
+    <div class="definition" id="definition">
+      <div id="definition-normal">{{WordDefinition}}</div>
+      <div id="definition-mono" style="display: none">
+        {{WordDefinitionMono}}
+      </div>
+    </div>
   </div>
   <div class="row row-4">
     <div class="sentence">
@@ -36,6 +41,7 @@
       const sentence = sentenceElement.textContent.trim();
 
       if (sentence.includes(word)) {
+        // Replace the word with a styled version
         const highlightedSentence = sentence.replace(
           new RegExp(`(${word})`, "g"),
           `<span style="text-decoration: underline; text-decoration-color: #ef5350;">$1</span>`
@@ -47,17 +53,16 @@
 
     // toggle dictionaries
     const definitionElement = document.getElementById("definition");
-
-    const wordDefinition = "{{WordDefinition}}";
-    const wordDefinitionMono = "{{WordDefinitionMono}}";
+    const normalDefinition = document.getElementById("definition-normal");
+    const monoDefinition = document.getElementById("definition-mono");
 
     let isMono = false;
 
     definitionElement.addEventListener("click", () => {
       isMono = !isMono;
-      definitionElement.innerHTML = isMono
-        ? wordDefinitionMono
-        : wordDefinition;
+
+      normalDefinition.style.display = isMono ? "none" : "block";
+      monoDefinition.style.display = isMono ? "block" : "none";
     });
   })();
 </script>

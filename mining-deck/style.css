@@ -41,7 +41,7 @@ html, body {
   }
   
   .row-3 {
-    flex: 25;
+    flex: 35;
     justify-content: center;
     align-items: center;
   }
@@ -87,7 +87,7 @@ html, body {
   .reading {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between the audio button and text */
+    gap: 10px;
     font-size: 2rem;
   }
   
@@ -98,7 +98,7 @@ html, body {
   .sentence {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between the audio button and text */
+    gap: 10px;
     font-size: 1.5rem;
   }
   
@@ -117,12 +117,12 @@ html, body {
   }
   
   .audio {
-    display: inline-flex; /* Ensures the audio button is treated as part of the same line */
+    display: inline-flex;
     align-items: center;
   }
   
   .text {
-    display: inline-flex; /* Keeps text aligned with the audio button */
+    display: inline-flex;
     align-items: center;
   }
   
@@ -133,3 +133,19 @@ html, body {
   a {
       color: #ef5350 !important;
   }
+  
+  .definition {
+    font-size: 1.2rem;
+    max-height: 100%; 
+    overflow: auto; 
+    padding: 10px; 
+    word-wrap: break-word;
+    line-height: 1; 
+    text-align: justify; 
+  }
+  
+  div[data-sc-content="example-sentence"] {
+    display: none;
+  }
+  
+  
